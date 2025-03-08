@@ -1,15 +1,9 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +17,48 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-pretendard), sans-serif;
+  }
+  
+  body {
+    color: #212121; /* 어두운 텍스트 색상 */
+    background-color: #ffffff;
+  }
+  
+  /* 모든 텍스트 요소에 어두운 색상 적용 */
+  h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select, label {
+    color: #212121;
+  }
+  
+  /* 링크 스타일 */
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* 특정 클래스에 Pretendard 폰트 강제 적용 */
+.font-pretendard {
+  font-family: var(--font-pretendard), sans-serif !important;
+}
+
+/* 한글 텍스트에 최적화된 자간 설정 */
+.korean-text {
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+}
+
+@layer utilities {
+  .text-shadow-lg {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
 }
