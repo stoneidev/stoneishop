@@ -33,7 +33,7 @@ export const ProductList: React.FC<ProductListProps> = ({
   title,
   description,
   products,
-  viewType = "grid",
+  viewType = "scroll",
   viewMoreLink,
 }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -73,31 +73,23 @@ export const ProductList: React.FC<ProductListProps> = ({
             )}
           </div>
 
-          {viewType === "scroll" ? (
-            <div className="flex space-x-2">
-              <button
-                onClick={scrollLeft}
-                className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
-              >
-                <FiChevronLeft size={20} />
-              </button>
-              <button
-                onClick={scrollRight}
-                className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
-              >
-                <FiChevronRight size={20} />
-              </button>
-            </div>
-          ) : (
-            viewMoreLink && (
-              <Link
-                href={viewMoreLink}
-                className="text-sm text-gray-600 hover:text-black underline"
-              >
-                더 보기
-              </Link>
-            )
-          )}
+          {viewType === "scroll"
+            ? viewMoreLink && (
+                <Link
+                  href={viewMoreLink}
+                  className="text-sm text-gray-600 hover:text-black underline"
+                >
+                  더 보기
+                </Link>
+              )
+            : viewMoreLink && (
+                <Link
+                  href={viewMoreLink}
+                  className="text-sm text-gray-600 hover:text-black underline"
+                >
+                  더 보기
+                </Link>
+              )}
         </div>
 
         {viewType === "grid" ? (
@@ -118,14 +110,15 @@ export const ProductList: React.FC<ProductListProps> = ({
 
             <div
               ref={scrollContainerRef}
-              className="flex overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-4"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              className="flex overflow-x-auto scrollbar-hide gap-4 pb-4 px-10"
+              style={{
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
+                WebkitOverflowScrolling: "touch",
+              }}
             >
               {products.map((product) => (
-                <div
-                  key={product.id}
-                  className="flex-shrink-0 w-[220px] min-w-[220px] snap-start mr-6"
-                >
+                <div key={product.id} className="flex-shrink-0 w-64">
                   <ProductCard product={product} />
                 </div>
               ))}
