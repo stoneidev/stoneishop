@@ -1,52 +1,145 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import { Typography } from "@/components/atoms/Typography";
 import { ProductCard } from "@/components/molecules/ProductCard/ProductCard";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-// ProductCardProps 타입을 직접 정의
-interface ProductCardProps {
+interface Product {
   id: string;
-  name: string;
+  name?: string;
+  title?: string;
   brand: string;
   price: number;
+  discountRate?: number;
   originalPrice?: number;
   imageUrl: string;
-  imageAlt: string;
+  imageAlt?: string;
+  isNew?: boolean;
+  isBest?: boolean;
   isSale?: boolean;
 }
 
 interface ProductListProps {
   title: string;
-  products: ProductCardProps[];
+  description?: string;
+  products: Product[];
+  viewType?: "grid" | "scroll";
   viewMoreLink?: string;
 }
 
 export const ProductList: React.FC<ProductListProps> = ({
   title,
+  description,
   products,
+  viewType = "grid",
   viewMoreLink,
 }) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      const containerWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollBy({
+        left: -containerWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      const containerWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollBy({
+        left: containerWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="py-12">
-      <div className="mb-6 flex items-center justify-between">
-        <Typography variant="h2" className="text-2xl font-medium">
-          {title}
-        </Typography>
-        {viewMoreLink && (
-          <Link
-            href={viewMoreLink}
-            className="text-sm font-light text-gray-600 underline hover:text-black"
-          >
-            더 보기
-          </Link>
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center mb-6">
+          <div>
+            <Typography variant="h2" className="text-2xl font-medium mb-2">
+              {title}
+            </Typography>
+            {description && (
+              <Typography variant="body1" color="secondary">
+                {description}
+              </Typography>
+            )}
+          </div>
+
+          {viewType === "scroll" ? (
+            <div className="flex space-x-2">
+              <button
+                onClick={scrollLeft}
+                className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
+              >
+                <FiChevronLeft size={20} />
+              </button>
+              <button
+                onClick={scrollRight}
+                className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
+              >
+                <FiChevronRight size={20} />
+              </button>
+            </div>
+          ) : (
+            viewMoreLink && (
+              <Link
+                href={viewMoreLink}
+                className="text-sm text-gray-600 hover:text-black underline"
+              >
+                더 보기
+              </Link>
+            )
+          )}
+        </div>
+
+        {viewType === "grid" ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        ) : (
+          <div className="relative">
+            <button
+              onClick={scrollLeft}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
+              aria-label="이전 상품 보기"
+            >
+              <FiChevronLeft size={24} />
+            </button>
+
+            <div
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-4"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {products.map((product) => (
+                <div
+                  key={product.id}
+                  className="flex-shrink-0 w-[220px] min-w-[220px] snap-start mr-6"
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={scrollRight}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
+              aria-label="다음 상품 보기"
+            >
+              <FiChevronRight size={24} />
+            </button>
+          </div>
         )}
-      </div>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-        {products.map((product) => (
-          <ProductCard key={product.id} {...product} />
-        ))}
       </div>
     </section>
   );

@@ -6,28 +6,35 @@ import Link from "next/link";
 import { Typography } from "@/components/atoms/Typography";
 
 type ProductCardProps = {
-  id: string;
-  name: string;
-  brand: string;
-  price: number;
-  originalPrice?: number;
-  imageUrl: string;
-  imageAlt?: string;
-  isNew?: boolean;
-  isSale?: boolean;
+  product: {
+    id: string;
+    name?: string;
+    title?: string;
+    brand: string;
+    price: number;
+    originalPrice?: number;
+    imageUrl: string;
+    imageAlt?: string;
+    isNew?: boolean;
+    isBest?: boolean;
+    isSale?: boolean;
+  };
 };
 
-export const ProductCard: React.FC<ProductCardProps> = ({
-  id,
-  name,
-  brand,
-  price,
-  originalPrice,
-  imageUrl,
-  imageAlt,
-  isNew,
-  isSale,
-}) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const {
+    id,
+    name,
+    title,
+    brand,
+    price,
+    originalPrice,
+    imageUrl,
+    imageAlt,
+    isNew,
+    isSale,
+  } = product;
+
   const formattedPrice = new Intl.NumberFormat("ko-KR", {
     style: "currency",
     currency: "KRW",
@@ -50,8 +57,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div className="relative mb-3 overflow-hidden">
         <div className="aspect-[3/4] w-full bg-gray-100">
           <Image
-            src={imageUrl}
-            alt={imageAlt || name}
+            src={imageUrl || "/images/placeholder.jpg"}
+            alt={imageAlt || name || title || ""}
             width={400}
             height={533}
             className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
@@ -78,7 +85,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {brand}
         </Typography>
         <Typography variant="body2" className="mb-1 line-clamp-2">
-          {name}
+          {name || title}
         </Typography>
         <div className="flex items-center">
           <Typography variant="body2" className="font-medium">
