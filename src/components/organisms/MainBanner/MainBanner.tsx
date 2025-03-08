@@ -54,7 +54,10 @@ export const MainBanner: React.FC = () => {
     <div className="relative">
       <Slider ref={sliderRef} {...settings}>
         {banners.map((banner) => (
-          <div key={banner.id} className="relative h-[600px] w-full">
+          <div
+            key={banner.id}
+            className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full"
+          >
             <Image
               src={banner.imageUrl}
               alt={banner.title}
@@ -62,16 +65,13 @@ export const MainBanner: React.FC = () => {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-            <div className="absolute bottom-20 left-20 max-w-md text-white">
-              <h2
-                className={`mb-4 text-4xl tracking-wide text-white font-light
-                `}
-              >
+            <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 left-4 sm:left-8 md:left-12 lg:left-20 max-w-md text-white">
+              <h2 className="mb-2 sm:mb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wide text-white font-light">
                 {banner.title}
               </h2>
               <a
                 href={banner.link}
-                className="inline-block border border-white bg-transparent px-8 py-3 text-sm font-light uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-black"
+                className="inline-block border border-white bg-transparent px-4 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 text-xs sm:text-sm font-light uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-black"
               >
                 자세히 보기
               </a>

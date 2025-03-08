@@ -2,7 +2,14 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { FiUser, FiShoppingBag, FiHeart, FiChevronDown } from "react-icons/fi";
+import {
+  FiUser,
+  FiShoppingBag,
+  FiHeart,
+  FiChevronDown,
+  FiMenu,
+  FiX,
+} from "react-icons/fi";
 import { SearchBar } from "@/components/molecules/SearchBar";
 import { Typography } from "@/components/atoms/Typography";
 
@@ -649,6 +656,10 @@ const getItemPath = (item: string): string => {
 
 export const Header: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(
+    null
+  );
 
   const handleMenuHover = (menuId: string) => {
     setActiveMenu(menuId);
@@ -656,6 +667,18 @@ export const Header: React.FC = () => {
 
   const handleMenuLeave = () => {
     setActiveMenu(null);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    // 모바일 메뉴를 닫을 때 서브메뉴도 닫기
+    if (mobileMenuOpen) {
+      setMobileSubmenuOpen(null);
+    }
+  };
+
+  const toggleMobileSubmenu = (menuId: string) => {
+    setMobileSubmenuOpen(mobileSubmenuOpen === menuId ? null : menuId);
   };
 
   return (
@@ -685,20 +708,32 @@ export const Header: React.FC = () => {
       </div>
 
       {/* 메인 헤더 */}
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
+          {/* 모바일 햄버거 메뉴 버튼 */}
+          <button
+            className="md:hidden p-2"
+            onClick={toggleMobileMenu}
+            aria-label="메뉴 열기"
+          >
+            <FiMenu size={24} />
+          </button>
+
           <Link href="/" className="flex items-center">
-            <h1 className="font-serif text-3xl font-light tracking-wider text-gray-900">
+            <h1 className="font-serif text-2xl sm:text-3xl font-light tracking-wider text-gray-900">
               Stonei
             </h1>
           </Link>
 
-          <SearchBar />
+          {/* 모바일에서는 검색바 숨김 */}
+          <div className="hidden md:block flex-1 mx-8">
+            <SearchBar />
+          </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-3 sm:space-x-6">
             <Link href="/mypage" className="flex flex-col items-center">
-              <FiUser size={20} className="text-black" />
-              <Typography variant="caption" className="mt-1">
+              <FiUser size={18} className="text-black" />
+              <Typography variant="caption" className="mt-1 text-xs sm:text-sm">
                 마이페이지
               </Typography>
             </Link>
@@ -716,10 +751,15 @@ export const Header: React.FC = () => {
             </Link>
           </div>
         </div>
+
+        {/* 모바일 전용 검색바 */}
+        <div className="mt-3 md:hidden">
+          <SearchBar />
+        </div>
       </div>
 
-      {/* GNB - 카테고리 네비게이션 */}
-      <div className="border-t border-gray-200 bg-gray-50">
+      {/* GNB - 데스크탑 카테고리 네비게이션 */}
+      <div className="hidden md:block border-t border-gray-200 bg-gray-50">
         <div className="container mx-auto px-6">
           <nav
             className="relative flex justify-center"
@@ -742,10 +782,110 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* 메가 메뉴 */}
+      {/* 모바일 메뉴 오버레이 */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={toggleMobileMenu}
+        />
+      )}
+
+      {/* 모바일 사이드 메뉴 */}
+      <div
+        className={`fixed top-0 left-0 h-full w-4/5 max-w-sm bg-white z-50 transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } md:hidden overflow-y-auto`}
+      >
+        <div className="flex justify-between items-center p-4 border-b border-gray-200">
+          <Typography variant="h6" className="font-medium">
+            메뉴
+          </Typography>
+          <button onClick={toggleMobileMenu} className="p-2">
+            <FiX size={24} />
+          </button>
+        </div>
+
+        <div className="py-2">
+          {megaMenuData.map((menu) => (
+            <div key={menu.id} className="border-b border-gray-100">
+              <button
+                className="flex justify-between items-center w-full px-4 py-3 text-left"
+                onClick={() => toggleMobileSubmenu(menu.id)}
+              >
+                <span className="text-sm font-medium uppercase">
+                  {menu.title}
+                </span>
+                <FiChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 ${
+                    mobileSubmenuOpen === menu.id ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {mobileSubmenuOpen === menu.id && (
+                <div className="bg-gray-50 py-2 px-4">
+                  {menu.sections.map((section, idx) => (
+                    <div key={idx} className="mb-4">
+                      <Typography
+                        variant="subtitle2"
+                        className="mb-2 font-medium"
+                      >
+                        {section.title}
+                      </Typography>
+                      <ul className="space-y-2">
+                        {section.items.map((item, itemIdx) => (
+                          <li key={itemIdx}>
+                            <Link
+                              href={`/${getCategoryPath(
+                                section.title
+                              )}/${getItemPath(item)}`}
+                              className="block py-1 text-sm text-gray-600 hover:text-black"
+                              onClick={toggleMobileMenu}
+                            >
+                              {item}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* 모바일 메뉴 하단 링크 */}
+        <div className="mt-4 px-4 py-2 border-t border-gray-200">
+          <Link
+            href="/login"
+            className="block py-2 text-sm"
+            onClick={toggleMobileMenu}
+          >
+            로그인
+          </Link>
+          <Link
+            href="/register"
+            className="block py-2 text-sm"
+            onClick={toggleMobileMenu}
+          >
+            회원가입
+          </Link>
+          <Link
+            href="/customer-service"
+            className="block py-2 text-sm"
+            onClick={toggleMobileMenu}
+          >
+            고객센터
+          </Link>
+        </div>
+      </div>
+
+      {/* 데스크탑 메가 메뉴 */}
       {activeMenu && (
         <div
-          className="absolute left-0 z-50 w-full bg-white shadow-lg"
+          className="absolute left-0 z-50 w-full bg-white shadow-lg hidden md:block"
           onMouseEnter={() => handleMenuHover(activeMenu)}
           onMouseLeave={handleMenuLeave}
         >

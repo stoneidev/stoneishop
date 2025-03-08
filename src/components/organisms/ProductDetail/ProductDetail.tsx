@@ -103,33 +103,38 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
     : null;
 
   return (
-    <div className="lg:grid lg:grid-cols-2 lg:gap-x-8">
+    <div className="lg:grid lg:grid-cols-1 xl:grid-cols-2 lg:gap-x-8">
       {/* 상품 이미지 */}
-      <ImageGallery images={product.images} />
+      <div className="mb-8 lg:mb-0">
+        <ImageGallery images={product.images} />
+      </div>
 
       {/* 상품 정보 */}
-      <div className="mt-10 lg:mt-0">
+      <div className="mt-6 lg:mt-0">
         <Typography variant="caption" className="text-gray-500">
           {product.brand}
         </Typography>
-        <Typography variant="h3" className="mt-1">
+        <Typography variant="h3" className="mt-1 text-xl sm:text-2xl">
           {product.name}
         </Typography>
 
         {/* 가격 정보 */}
-        <div className="mt-3 flex items-center">
-          <Typography variant="h4" className="font-medium">
+        <div className="mt-3 flex flex-wrap items-center">
+          <Typography variant="h4" className="font-medium text-lg sm:text-xl">
             {formattedPrice}
           </Typography>
           {formattedOriginalPrice && (
             <>
               <Typography
                 variant="body1"
-                className="ml-2 line-through text-gray-500"
+                className="ml-2 line-through text-gray-500 text-sm sm:text-base"
               >
                 {formattedOriginalPrice}
               </Typography>
-              <Typography variant="body1" className="ml-2 text-red-600">
+              <Typography
+                variant="body1"
+                className="ml-2 text-red-600 text-sm sm:text-base"
+              >
                 {product.discount}% OFF
               </Typography>
             </>
