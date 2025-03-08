@@ -121,15 +121,13 @@ export default function Home() {
     <MainTemplate>
       <MainBanner />
       <div className="container mx-auto px-4">
+        <CategoryShop />
         <ProductList
           title="신상품"
           description="스토니의 새로운 컬렉션을 만나보세요"
           products={newProducts}
           viewType="scroll"
         />
-
-        <CategoryShop />
-
         <ProductList
           title="베스트 상품"
           description="가장 인기 있는 스토니의 아이템"
