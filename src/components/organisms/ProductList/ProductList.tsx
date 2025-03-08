@@ -3,7 +3,19 @@
 import React from "react";
 import Link from "next/link";
 import { Typography } from "@/components/atoms/Typography";
-import { ProductCard, ProductCardProps } from "@/components/molecules/ProductCard/ProductCard";
+import { ProductCard } from "@/components/molecules/ProductCard/ProductCard";
+
+// ProductCardProps 타입을 직접 정의
+interface ProductCardProps {
+  id: string;
+  name: string;
+  brand: string;
+  price: number;
+  originalPrice?: number;
+  imageUrl: string;
+  imageAlt: string;
+  isSale?: boolean;
+}
 
 interface ProductListProps {
   title: string;
@@ -38,4 +50,4 @@ export const ProductList: React.FC<ProductListProps> = ({
       </div>
     </section>
   );
-}; 
+};

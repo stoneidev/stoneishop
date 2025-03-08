@@ -98,13 +98,35 @@ export const MainTemplate: React.FC = () => {
           <CategoryShop />
           <ProductList
             title="신상품"
-            products={newProducts}
+            products={newProducts.map((product) => ({
+              id: product.id,
+              name: product.title,
+              brand: product.brand,
+              price: product.price,
+              originalPrice: product.discountRate
+                ? Math.round(product.price / (1 - product.discountRate / 100))
+                : undefined,
+              imageUrl: product.imageUrl,
+              imageAlt: product.title,
+              isSale: !!product.discountRate,
+            }))}
             viewMoreLink="/products/new"
           />
 
           <ProductList
             title="베스트 상품"
-            products={bestProducts}
+            products={bestProducts.map((product) => ({
+              id: product.id,
+              name: product.title,
+              brand: product.brand,
+              price: product.price,
+              originalPrice: product.discountRate
+                ? Math.round(product.price / (1 - product.discountRate / 100))
+                : undefined,
+              imageUrl: product.imageUrl,
+              imageAlt: product.title,
+              isSale: !!product.discountRate,
+            }))}
             viewMoreLink="/products/best"
           />
         </div>

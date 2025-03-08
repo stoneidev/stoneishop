@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "@/components/organisms/Header";
 import { Footer } from "@/components/organisms/Footer";
 import { Breadcrumb } from "@/components/organisms/Breadcrumb/Breadcrumb";
@@ -248,12 +248,22 @@ const sizeGuideData = {
 export default function ProductDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const id = params.id;
-  console.log(`상품 ID: ${id}`);
-
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
+
+  useEffect(() => {
+    const resolveParams = async () => {
+      try {
+        const resolvedParams = await params;
+        console.log(`상품 ID: ${resolvedParams.id}`);
+      } catch (error) {
+        console.error("파라미터 처리 중 오류 발생:", error);
+      }
+    };
+
+    resolveParams();
+  }, [params]);
 
   const handleAddToCart = (
     product: Product,
