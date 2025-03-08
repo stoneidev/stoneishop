@@ -250,7 +250,8 @@ export default function ProductDetailPage({
 }: {
   params: { id: string };
 }) {
-  console.log(`상품 ID: ${params.id}`);
+  const id = params.id;
+  console.log(`상품 ID: ${id}`);
 
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
 
