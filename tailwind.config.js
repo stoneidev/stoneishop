@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const { colors, typography, spacing, borders, shadows, zIndices } = require('./src/styles/designTokens');
+const { colors, typography, spacing, shadows } = require("./src/styles/tokens");
 
 module.exports = {
   content: [
@@ -8,31 +8,34 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      ...colors,
-      // Tailwind의 기본 색상 대신 우리의 디자인 토큰 색상 사용
-      black: colors.black,
-      white: colors.white,
-      gray: colors.gray,
-      // 브랜드 색상 추가
-      brand: colors.brand,
-      // 상태 색상 추가
-      error: colors.state.error,
-      success: colors.state.success,
-      warning: colors.state.warning,
-      info: colors.state.info,
+    extend: {
+      colors: {
+        primary: {
+          light: colors.primary.light,
+          main: colors.primary.main,
+          dark: colors.primary.dark,
+          contrastText: colors.primary.contrastText,
+        },
+        secondary: {
+          light: colors.secondary.light,
+          main: colors.secondary.main,
+          dark: colors.secondary.dark,
+          contrastText: colors.secondary.contrastText,
+        },
+        neutral: colors.neutral,
+        semantic: colors.semantic,
+        background: colors.background,
+        text: colors.text,
+        border: colors.border,
+      },
+      spacing,
+      fontFamily: typography.fontFamily,
+      fontSize: typography.fontSize,
+      fontWeight: typography.fontWeight,
+      lineHeight: typography.lineHeight,
+      letterSpacing: typography.letterSpacing,
+      boxShadow: shadows,
     },
-    fontFamily: typography.fontFamily,
-    fontSize: typography.fontSize,
-    fontWeight: typography.fontWeight,
-    lineHeight: typography.lineHeight,
-    letterSpacing: typography.letterSpacing,
-    borderRadius: borders.radius,
-    borderWidth: borders.width,
-    boxShadow: shadows,
-    spacing: spacing,
-    zIndex: zIndices,
-    extend: {},
   },
   plugins: [],
-}; 
+};

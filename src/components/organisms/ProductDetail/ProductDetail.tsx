@@ -209,7 +209,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
         <div className="mb-8 mt-8 flex space-x-4">
           <Button
             variant="primary"
-            size="lg"
+            size="large"
             className="flex-1 bg-black py-3 text-white hover:bg-gray-900"
             onClick={handleAddToCart}
           >
@@ -217,7 +217,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
             장바구니에 담기
           </Button>
           <Button
-            variant="outline"
+            variant="outlined"
             size="lg"
             className="flex items-center justify-center border border-gray-300 px-4 hover:border-gray-900"
             onClick={() => onAddToWishlist(product)}
@@ -225,7 +225,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
             <FiHeart />
           </Button>
           <Button
-            variant="outline"
+            variant="outlined"
             size="lg"
             className="flex items-center justify-center border border-gray-300 px-4 hover:border-gray-900"
           >

@@ -17,19 +17,22 @@ interface BannerItem {
 const banners: BannerItem[] = [
   {
     id: 1,
-    imageUrl: "https://picsum.photos/1200/400?random=1",
+    imageUrl:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&h=400&auto=format&fit=crop",
     title: "여름 신상품 특별 할인",
     link: "/event/summer",
   },
   {
     id: 2,
-    imageUrl: "https://picsum.photos/1200/400?random=2",
+    imageUrl:
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&h=400&auto=format&fit=crop",
     title: "명품 브랜드 기획전",
     link: "/event/luxury",
   },
   {
     id: 3,
-    imageUrl: "https://picsum.photos/1200/400?random=3",
+    imageUrl:
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&h=400&auto=format&fit=crop",
     title: "시즌오프 최대 70% 할인",
     link: "/event/seasonoff",
   },

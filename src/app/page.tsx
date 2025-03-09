@@ -58,6 +58,60 @@ const newProducts = [
     imageAlt: "레더 크로스바디 백",
     isNew: true,
   },
+  {
+    id: "11",
+    name: "캐시미어 목도리",
+    brand: "Stonei",
+    price: 130000,
+    originalPrice: 160000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1520903074185-8eca362b3dce?auto=format&fit=crop",
+    imageAlt: "캐시미어 목도리",
+    isNew: true,
+    isSale: true,
+  },
+  {
+    id: "12",
+    name: "모헤어 카디건",
+    brand: "Stonei",
+    price: 190000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1572804013427-4d7ca7268217?auto=format&fit=crop",
+    imageAlt: "모헤어 카디건",
+    isNew: true,
+  },
+  {
+    id: "13",
+    name: "울 코튼 베레모",
+    brand: "Stonei",
+    price: 85000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop",
+    imageAlt: "울 코튼 베레모",
+    isNew: true,
+  },
+  {
+    id: "14",
+    name: "램스울 터틀넥 니트",
+    brand: "Stonei",
+    price: 170000,
+    originalPrice: 210000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop",
+    imageAlt: "램스울 터틀넥 니트",
+    isNew: true,
+    isSale: true,
+  },
+  {
+    id: "15",
+    name: "메리노 울 머플러",
+    brand: "Stonei",
+    price: 95000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1520903074185-8eca362b3dce?auto=format&fit=crop",
+    imageAlt: "메리노 울 머플러",
+    isNew: true,
+  },
 ];
 
 // 베스트 상품 데이터
@@ -112,6 +166,60 @@ const bestProducts = [
     imageUrl:
       "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop",
     imageAlt: "실크 새틴 슬립 드레스",
+    isBest: true,
+  },
+  {
+    id: "16",
+    name: "캐시미어 후드 스웨터",
+    brand: "Stonei",
+    price: 260000,
+    originalPrice: 320000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?auto=format&fit=crop",
+    imageAlt: "캐시미어 후드 스웨터",
+    isBest: true,
+    isSale: true,
+  },
+  {
+    id: "17",
+    name: "램스킨 레더 장갑",
+    brand: "Stonei",
+    price: 110000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop",
+    imageAlt: "램스킨 레더 장갑",
+    isBest: true,
+  },
+  {
+    id: "18",
+    name: "메리노 울 비니",
+    brand: "Stonei",
+    price: 78000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop",
+    imageAlt: "메리노 울 비니",
+    isBest: true,
+  },
+  {
+    id: "19",
+    name: "코튼 캐시미어 니트 베스트",
+    brand: "Stonei",
+    price: 170000,
+    originalPrice: 210000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop",
+    imageAlt: "코튼 캐시미어 니트 베스트",
+    isBest: true,
+    isSale: true,
+  },
+  {
+    id: "20",
+    name: "알파카 울 롱 코트",
+    brand: "Stonei",
+    price: 420000,
+    imageUrl:
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop",
+    imageAlt: "알파카 울 롱 코트",
     isBest: true,
   },
 ];

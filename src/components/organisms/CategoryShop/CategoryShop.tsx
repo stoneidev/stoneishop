@@ -1,18 +1,11 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { Typography } from "@/components/atoms/Typography";
+import { CategoryGrid } from "@/components/molecules/CategoryGrid/CategoryGrid";
 
-interface CategoryItem {
-  id: string;
-  title: string;
-  imageUrl: string;
-  link: string;
-}
-
-const categories: CategoryItem[] = [
+// 카테고리 데이터
+const categories = [
   {
     id: "wedding",
     title: "웨딩 게스트 룩",
@@ -88,30 +81,7 @@ export const CategoryShop: React.FC = () => {
         </Typography>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
-        {categories.map((category) => (
-          <Link
-            key={category.id}
-            href={category.link}
-            className="flex flex-col items-center group"
-          >
-            <div className="relative w-full h-56 md:h-68 lg:h-76 overflow-hidden border border-gray-200 rounded-lg">
-              <Image
-                src={category.imageUrl}
-                alt={category.title}
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <Typography
-              variant="caption"
-              className="text-center mt-3 w-full truncate text-[16px]"
-            >
-              {category.title}
-            </Typography>
-          </Link>
-        ))}
-      </div>
+      <CategoryGrid categories={categories} />
     </section>
   );
 };

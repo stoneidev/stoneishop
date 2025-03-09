@@ -72,7 +72,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               </span>
             )}
             {isSale && (
-              <span className="inline-block bg-error px-2 py-1 text-xs font-medium text-white">
+              <span className="inline-block bg-red-600 px-2 py-1 text-xs font-bold text-white shadow-md animate-pulse">
                 SALE
               </span>
             )}
