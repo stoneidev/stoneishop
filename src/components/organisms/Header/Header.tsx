@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { FiMenu, FiLoader } from "react-icons/fi";
 import { SearchBar } from "@/components/molecules/SearchBar";
 import { HeaderLogo } from "@/components/atoms/HeaderLogo/HeaderLogo";
@@ -47,7 +47,8 @@ const getItemPath = (item: string): string => {
   return path.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
 };
 
-export const Header: React.FC = () => {
+// React.memo를 사용하여 헤더 컴포넌트 메모이제이션
+const Header = memo(({ transparent = false }: { transparent?: boolean }) => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(
@@ -116,7 +117,13 @@ export const Header: React.FC = () => {
   }
 
   return (
-    <header className="relative border-b border-gray-200">
+    <header
+      className={`relative border-b ${
+        transparent
+          ? "bg-transparent border-transparent"
+          : "bg-white border-gray-200"
+      }`}
+    >
       <HeaderUtilityMenu links={utilityLinks} />
 
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
@@ -166,4 +173,9 @@ export const Header: React.FC = () => {
       />
     </header>
   );
-};
+});
+
+// 컴포넌트 이름 설정 (개발 도구에서 확인용)
+Header.displayName = "Header";
+
+export { Header };

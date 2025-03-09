@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Suspense } from "react";
 import { FiLoader } from "react-icons/fi";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Playfair Display 폰트 (영문 세리프용)
 const playfair = Playfair_Display({
@@ -70,6 +71,7 @@ export default function RootLayout({
           }
         >
           {children}
+          <SpeedInsights />
         </Suspense>
       </body>
     </html>
