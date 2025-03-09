@@ -11,7 +11,6 @@ interface CategoryCardProps {
 }
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({
-  id,
   title,
   imageUrl,
   link,
@@ -35,4 +34,4 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
       </Typography>
     </Link>
   );
-}; 
+};

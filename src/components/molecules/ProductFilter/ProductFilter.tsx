@@ -22,7 +22,9 @@ export const ProductFilter: React.FC<ProductFilterProps> = ({
   const [expandedCategories, setExpandedCategories] = useState<string[]>(
     categories.map((cat) => cat.name)
   );
-  const [selectedFilters, setSelectedFilters] = useState<Record<string, string[]>>({});
+  const [selectedFilters, setSelectedFilters] = useState<
+    Record<string, string[]>
+  >({});
 
   const toggleCategory = (categoryName: string) => {
     setExpandedCategories((prev) =>
@@ -46,7 +48,7 @@ export const ProductFilter: React.FC<ProductFilterProps> = ({
 
       // 필터 변경 콜백 호출
       onFilterChange(categoryName, result[categoryName]);
-      
+
       return result;
     });
   };
@@ -65,8 +67,8 @@ export const ProductFilter: React.FC<ProductFilterProps> = ({
           필터
         </Typography>
         <Button
-          variant="ghost"
-          size="sm"
+          variant="text"
+          size="small"
           onClick={clearFilters}
           className="text-gray-600 hover:text-black"
         >
@@ -98,9 +100,9 @@ export const ProductFilter: React.FC<ProductFilterProps> = ({
                     <input
                       type="checkbox"
                       id={`${category.name}-${option.id}`}
-                      checked={
-                        (selectedFilters[category.name] || []).includes(option.id)
-                      }
+                      checked={(selectedFilters[category.name] || []).includes(
+                        option.id
+                      )}
                       onChange={() => toggleFilter(category.name, option.id)}
                       className="h-4 w-4 border-gray-300 text-black focus:ring-black"
                     />
@@ -110,7 +112,9 @@ export const ProductFilter: React.FC<ProductFilterProps> = ({
                     >
                       <span>{option.label}</span>
                       {option.count !== undefined && (
-                        <span className="text-gray-500 text-xs">({option.count})</span>
+                        <span className="text-gray-500 text-xs">
+                          ({option.count})
+                        </span>
                       )}
                     </label>
                   </div>
@@ -122,4 +126,4 @@ export const ProductFilter: React.FC<ProductFilterProps> = ({
       </div>
     </div>
   );
-}; 
+};

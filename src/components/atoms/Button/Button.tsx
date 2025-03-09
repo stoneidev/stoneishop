@@ -3,8 +3,8 @@
 import React from "react";
 
 interface ButtonProps {
-  variant?: "primary" | "secondary" | "outlined" | "text";
-  size?: "small" | "medium" | "large" | "lg";
+  variant?: "primary" | "secondary" | "outlined" | "text" | "ghost";
+  size?: "small" | "medium" | "large" | "lg" | "sm";
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
@@ -29,14 +29,16 @@ export const Button: React.FC<ButtonProps> = ({
     secondary: `bg-secondary-main text-white hover:bg-secondary-dark`,
     outlined: `border border-primary-main text-primary-main hover:bg-primary-light`,
     text: `text-primary-main hover:bg-primary-light`,
+    ghost: `text-primary-main hover:bg-primary-light`,
   };
 
-  // 버튼 크기 매핑 - "lg"를 "large"와 동일하게 처리
+  // 버튼 크기 매핑
   const sizeStyles = {
     small: `py-1 px-2 text-sm`,
     medium: `py-2 px-4 text-base`,
     large: `py-3 px-6 text-lg`,
     lg: `py-3 px-6 text-lg`,
+    sm: `py-1 px-2 text-sm`,
   };
 
   const baseStyles = `
