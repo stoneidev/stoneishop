@@ -5,6 +5,7 @@ import "./globals.css";
 import { Suspense } from "react";
 import { FiLoader } from "react-icons/fi";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 // Playfair Display 폰트 (영문 세리프용)
 const playfair = Playfair_Display({
@@ -52,27 +53,29 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${pretendard.variable} ${playfair.variable} font-sans`}>
-        <Suspense
-          fallback={
-            <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-              <div className="text-center">
-                <FiLoader
-                  size={40}
-                  className="animate-spin mx-auto text-gray-600"
-                />
-                <h2 className="mt-4 text-xl font-medium">
-                  스토니 스토어 로딩 중...
-                </h2>
-                <p className="mt-2 text-gray-500">
-                  최고의 쇼핑 경험을 준비하고 있습니다
-                </p>
+        <AuthProvider>
+          <Suspense
+            fallback={
+              <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
+                <div className="text-center">
+                  <FiLoader
+                    size={40}
+                    className="animate-spin mx-auto text-gray-600"
+                  />
+                  <h2 className="mt-4 text-xl font-medium">
+                    스토니 스토어 로딩 중...
+                  </h2>
+                  <p className="mt-2 text-gray-500">
+                    최고의 쇼핑 경험을 준비하고 있습니다
+                  </p>
+                </div>
               </div>
-            </div>
-          }
-        >
-          {children}
-          <SpeedInsights />
-        </Suspense>
+            }
+          >
+            {children}
+            <SpeedInsights />
+          </Suspense>
+        </AuthProvider>
       </body>
     </html>
   );

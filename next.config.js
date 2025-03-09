@@ -15,6 +15,10 @@ const nextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
+    domains: [
+      "lh3.googleusercontent.com", // Google 프로필 이미지 호스트
+      "firebasestorage.googleapis.com", // Firebase Storage 호스트 (필요한 경우)
+    ],
   },
 };
 

@@ -39,6 +39,7 @@ export interface InputProps
   label?: string;
   error?: string;
   helperText?: string;
+  icon?: React.ReactNode;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -49,28 +50,36 @@ export const Input: React.FC<InputProps> = ({
   size,
   rounded,
   className,
+  icon,
   ...props
 }) => {
   return (
-    <div className="w-full">
-      {label && (
-        <label className="mb-1 block text-sm font-medium text-gray-700">
-          {label}
-        </label>
+    <div className="relative">
+      {icon && (
+        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+          {icon}
+        </div>
       )}
-      <input
-        className={inputVariants({
-          variant: error ? "error" : variant,
-          size,
-          rounded,
-          className,
-        })}
-        {...props}
-      />
-      {error && <p className="mt-1 text-xs text-error">{error}</p>}
-      {helperText && !error && (
-        <p className="mt-1 text-xs text-gray-500">{helperText}</p>
-      )}
+      <div className="w-full">
+        {label && (
+          <label className="mb-1 block text-sm font-medium text-gray-700">
+            {label}
+          </label>
+        )}
+        <input
+          className={`${inputVariants({
+            variant: error ? "error" : variant,
+            size,
+            rounded,
+            className,
+          })} ${icon ? "pl-10" : ""}`}
+          {...props}
+        />
+        {error && <p className="mt-1 text-xs text-error">{error}</p>}
+        {helperText && !error && (
+          <p className="mt-1 text-xs text-gray-500">{helperText}</p>
+        )}
+      </div>
     </div>
   );
 };

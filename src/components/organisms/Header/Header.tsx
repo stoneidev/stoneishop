@@ -9,6 +9,7 @@ import { HeaderUtilityMenu } from "@/components/molecules/HeaderUtilityMenu/Head
 import { MegaMenu } from "@/components/molecules/MegaMenu/MegaMenu";
 import { MobileMenu } from "@/components/molecules/MobileMenu/MobileMenu";
 import { Typography } from "@/components/atoms/Typography";
+import { useAuth } from "@/contexts/AuthContext";
 
 // 메가메뉴 데이터 타입 정의
 interface MenuSection {
@@ -57,6 +58,10 @@ const Header = memo(({ transparent = false }: { transparent?: boolean }) => {
   const [megaMenuData, setMegaMenuData] = useState<MenuItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // AuthContext에서 user 정보 가져오기
+  const { user } = useAuth();
+  const isLoggedIn = !!user; // user 객체가 있으면 로그인 상태
+
   useEffect(() => {
     const fetchHeaderData = async () => {
       try {
@@ -94,11 +99,18 @@ const Header = memo(({ transparent = false }: { transparent?: boolean }) => {
     setMobileSubmenuOpen(mobileSubmenuOpen === menuId ? null : menuId);
   };
 
-  const utilityLinks = [
-    { href: "/login", label: "로그인" },
-    { href: "/register", label: "회원가입" },
-    { href: "/customer-service", label: "고객센터" },
-  ];
+  // 로그인 상태에 따라 다른 유틸리티 링크 표시
+  const utilityLinks = isLoggedIn
+    ? [
+        { href: "/my-page", label: "마이페이지" },
+        { href: "/logout", label: "로그아웃" },
+        { href: "/customer-service", label: "고객센터" },
+      ]
+    : [
+        { href: "/login", label: "로그인" },
+        { href: "/register", label: "회원가입" },
+        { href: "/customer-service", label: "고객센터" },
+      ];
 
   if (isLoading) {
     return (
@@ -144,7 +156,7 @@ const Header = memo(({ transparent = false }: { transparent?: boolean }) => {
             <SearchBar />
           </div>
 
-          <HeaderIconsGroup />
+          <HeaderIconsGroup isLoggedIn={isLoggedIn} />
         </div>
 
         {/* 모바일 전용 검색바 */}
