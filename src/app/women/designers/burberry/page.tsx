@@ -244,13 +244,13 @@ export default function BurberryPage() {
         {/* 브랜드 배너 */}
         <div className="relative h-64 w-full bg-gray-100 md:h-80">
           <Image
-            src="https://images.unsplash.com/photo-1565537222174-2a43ca1c3462?q=80&w=2070&auto=format&fit=crop"
-            alt="Burberry"
+            src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop"
+            alt="Burberry 브랜드 배너"
             fill
             priority
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <div className="absolute inset-0  bg-opacity-40 flex items-center justify-center">
             <Typography
               variant="h1"
               color="white"
