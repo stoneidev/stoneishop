@@ -52,6 +52,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const discountPercentage =
     originalPrice && ((originalPrice - price) / originalPrice) * 100;
 
+  const discountRate = originalPrice ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
+
   return (
     <Link href={`/product/${id}`} className="group block">
       <div className="relative mb-3 overflow-hidden">
@@ -76,6 +78,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 SALE
               </span>
             )}
+          </div>
+        )}
+        {isSale && (
+          <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded">
+            {discountRate}% OFF
           </div>
         )}
       </div>
