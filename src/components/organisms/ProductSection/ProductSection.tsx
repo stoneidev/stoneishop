@@ -4,10 +4,32 @@ import { ProductCard } from "@/components/molecules/ProductCard/ProductCard";
 import { ProductFilter } from "@/components/molecules/ProductFilter/ProductFilter";
 import { ProductSort } from "@/components/molecules/ProductSort/ProductSort";
 
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  imageUrl: string;
+  imageAlt: string;
+  brand: string;
+  category?: string;
+  // 필요한 다른 속성들 추가
+}
+
+interface FilterCategory {
+  id?: string;
+  name: string;
+  options: { id: string; label: string; count?: number }[];
+}
+
+interface SortOption {
+  id: string;
+  label: string;
+}
+
 interface ProductSectionProps {
-  products: any[];
-  filterCategories: any[];
-  sortOptions: any[];
+  products: Product[];
+  filterCategories: FilterCategory[];
+  sortOptions: SortOption[];
   onFilterChange: (category: string, value: string[]) => void;
   onSortChange: (sortId: string) => void;
 }
@@ -50,4 +72,4 @@ export const ProductSection: React.FC<ProductSectionProps> = ({
       </div>
     </div>
   );
-}; 
+};

@@ -44,6 +44,16 @@ interface ProductDetailProps {
   onOpenSizeGuide: () => void;
 }
 
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  size: string;
+  color: string;
+  quantity: number;
+  imageUrl: string;
+}
+
 export const ProductDetail: React.FC<ProductDetailProps> = ({
   product,
   onAddToCart,
@@ -58,7 +68,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({
   ]);
   const [quantity, setQuantity] = useState(1);
   const [isCartPopupOpen, setIsCartPopupOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<any[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [cartTotal, setCartTotal] = useState(0);
 
   const handleSizeSelect = (size: string) => {

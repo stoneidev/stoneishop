@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { Typography } from "@/components/atoms/Typography";
-import { Button } from "@/components/atoms/Button";
 
 interface PromotionBannerProps {
   title: string;
@@ -52,4 +51,4 @@ export const PromotionBanner: React.FC<PromotionBannerProps> = ({
       </div>
     </div>
   );
-}; 
+};
