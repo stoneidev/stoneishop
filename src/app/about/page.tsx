@@ -42,25 +42,38 @@ export default function AboutPage() {
     },
     {
       name: "임재명",
-      role: "크리에이티브 디렉터",
+      role: "CPO",
       imageUrl:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop",
       bio: "세계적인 패션 하우스에서 경력을 쌓은 디자이너로, 스토니의 창의적인 방향성을 담당합니다.",
     },
     {
       name: "김봄이",
-      role: "마케팅 책임자",
+      role: "CTO",
       imageUrl:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=300&auto=format&fit=crop",
-      bio: "디지털 마케팅 전문가로, 스토니의 브랜드 메시지를 효과적으로 전달하는 전략을 수립합니다.",
+      bio: "디지털 기술 전문가로, 스토니의 기술 비전과 혁신 전략을 효과적으로 설계하고 실행합니다.",
     },
     {
       name: "이희종",
-      role: "제품 개발 책임자",
+      role: "CIO",
       imageUrl:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop",
-      bio: "소재 전문가로서 지속 가능한 제품 개발과 품질 관리를 담당하고 있습니다.",
+      bio: "정보 기술 전문가로서, 스토니의 IT 인프라를 최적화하고 데이터 기반 의사결정을 통해 지속 가능한 성장을 지원합니다.",
     },
+    { 
+      name: "우정연", 
+      role: "CDO", 
+      imageUrl: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=300&auto=format&fit=crop", 
+      bio: "디지털 혁신 전문가로서, 스토니의 디지털 전략을 설계하고 실행하여 지속 가능한 성장을 이끌고 있습니다."
+    },
+    {  
+      name: "김민수",  
+      role: "CSO",  
+      imageUrl: "https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=300&auto=format&fit=crop",  
+      bio: "보안 및 리스크 관리 전문가로서, 스토니의 자산 보호와 안전한 운영 환경을 구축하는 데 주력하고 있습니다."
+    }
+    
   ];
 
   return (
