@@ -45,7 +45,7 @@ export default function AboutPage() {
       role: "CPO",
       imageUrl:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop",
-      bio: "세계적인 패션 하우스에서 경력을 쌓은 디자이너로, 스토니의 창의적인 방향성을 담당합니다.",
+      bio: "세계적인 패션 하우스에서 경력을 쌓은 제품 전문가로, 스토니의 제품 전략과 혁신적인 방향성을 총괄합니다.",
     },
     {
       name: "김봄이",
@@ -72,8 +72,19 @@ export default function AboutPage() {
       role: "CSO",  
       imageUrl: "https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=300&auto=format&fit=crop",  
       bio: "보안 및 리스크 관리 전문가로서, 스토니의 자산 보호와 안전한 운영 환경을 구축하는 데 주력하고 있습니다."
+    },
+    {  
+      name: "김형민",  
+      role: "CHO",  
+      imageUrl: "https://images.unsplash.com/photo-1546567857-f0acd1e8f4c5?q=80&w=300&auto=format&fit=crop",  
+      bio: "인적 자원 관리 전문가로서, 스토니의 조직 문화와 직원 복지를 총괄하며 지속 가능한 성장을 지원합니다."
+    },
+    {  
+      name: "김홍진",  
+      role: "인턴",  
+      imageUrl: "https://images.unsplash.com/photo-1541845153-20d31a2a5b4a?q=80&w=300&auto=format&fit=crop",  
+      bio: "열정적인 태도로 스토니에서 다양한 업무를 배우며 성장하고 있는 인턴입니다." 
     }
-    
   ];
 
   return (
