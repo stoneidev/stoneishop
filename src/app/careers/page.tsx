@@ -92,7 +92,7 @@ export default function CareersPage() {
     },
     {
       icon: <FaCalendarAlt />,
-      title: "유연한 근무 시간",
+      title: "유연한 근무 시간(주3.5)",
       description:
         "코어 타임(10am-4pm)을 제외한 시간은 자유롭게 조정할 수 있는 유연 근무제를 운영합니다.",
     },
@@ -110,7 +110,7 @@ export default function CareersPage() {
     },
     {
       icon: <FaMoneyBillWave />,
-      title: "성과 보상",
+      title: "성과 보상(기본연봉 2억+)",
       description:
         "개인과 팀의 성과에 따른 인센티브 제도를 운영하며, 스톡옵션 기회도 제공합니다.",
     },
