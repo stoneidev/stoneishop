@@ -3,15 +3,20 @@ import Link from "next/link";
 import { FiChevronDown } from "react-icons/fi";
 import { Typography } from "@/components/atoms/Typography";
 
-interface MenuSection {
-  title: string;
-  items: string[];
-}
-
-interface MenuItem {
+export interface MenuItem {
   id: string;
   title: string;
   sections: MenuSection[];
+}
+
+export interface MenuSection {
+  title: string;
+  items: MenuItemDetail[];
+}
+
+export interface MenuItemDetail {
+  name: string;
+  url: string;
 }
 
 interface MegaMenuProps {
@@ -19,8 +24,6 @@ interface MegaMenuProps {
   activeMenu: string | null;
   onMenuHover: (menuId: string) => void;
   onMenuLeave: () => void;
-  getCategoryPath: (category: string) => string;
-  getItemPath: (item: string) => string;
 }
 
 export const MegaMenu: React.FC<MegaMenuProps> = ({
@@ -28,8 +31,6 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
   activeMenu,
   onMenuHover,
   onMenuLeave,
-  getCategoryPath,
-  getItemPath,
 }) => {
   return (
     <div className="hidden md:block border-t border-gray-200 bg-gray-50">
@@ -76,12 +77,10 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                       {section.items.map((item, itemIndex) => (
                         <li key={itemIndex}>
                           <Link
-                            href={`/${getCategoryPath(
-                              section.title
-                            )}/${getItemPath(item)}`}
+                            href={item.url}
                             className="text-gray-600 hover:text-black hover:underline"
                           >
-                            <Typography variant="body2">{item}</Typography>
+                            <Typography variant="body2">{item.name}</Typography>
                           </Link>
                         </li>
                       ))}
@@ -94,4 +93,4 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
       )}
     </div>
   );
-}; 
+};

@@ -10,43 +10,7 @@ import { MegaMenu } from "@/components/molecules/MegaMenu/MegaMenu";
 import { MobileMenu } from "@/components/molecules/MobileMenu/MobileMenu";
 import { Typography } from "@/components/atoms/Typography";
 import { useAuth } from "@/contexts/AuthContext";
-
-// 메가메뉴 데이터 타입 정의
-interface MenuSection {
-  title: string;
-  items: string[];
-}
-
-interface MenuItem {
-  id: string;
-  title: string;
-  sections: MenuSection[];
-}
-
-// 카테고리 경로 변환 함수
-const getCategoryPath = (category: string): string => {
-  const categoryMap: Record<string, string> = {
-    "여성 디자이너": "women/designers",
-    "남성 디자이너": "men/designers",
-    "인기 디자이너": "designers/popular",
-    "디자이너 가방": "bags/designers",
-    "여성 의류": "women/clothing",
-    "남성 의류": "men/clothing",
-    // 필요한 다른 카테고리 매핑 추가
-  };
-
-  return categoryMap[category] || category.toLowerCase().replace(/\s+/g, "-");
-};
-
-// 아이템 경로 변환 함수
-const getItemPath = (item: string): string => {
-  // 버버리를 burberry로 변경
-  let path = item;
-  if (item === "버버리") {
-    path = "burberry";
-  }
-  return path.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
-};
+import { MenuItem } from "@/components/molecules/MegaMenu/MegaMenu";
 
 // React.memo를 사용하여 헤더 컴포넌트 메모이제이션
 const Header = memo(({ transparent = false }: { transparent?: boolean }) => {
@@ -170,8 +134,6 @@ const Header = memo(({ transparent = false }: { transparent?: boolean }) => {
         activeMenu={activeMenu}
         onMenuHover={handleMenuHover}
         onMenuLeave={handleMenuLeave}
-        getCategoryPath={getCategoryPath}
-        getItemPath={getItemPath}
       />
 
       <MobileMenu
@@ -180,8 +142,6 @@ const Header = memo(({ transparent = false }: { transparent?: boolean }) => {
         submenuOpen={mobileSubmenuOpen}
         onClose={toggleMobileMenu}
         onToggleSubmenu={toggleMobileSubmenu}
-        getCategoryPath={getCategoryPath}
-        getItemPath={getItemPath}
       />
     </header>
   );

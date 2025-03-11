@@ -2,17 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { FiX, FiChevronDown } from "react-icons/fi";
 import { Typography } from "@/components/atoms/Typography";
-
-interface MenuSection {
-  title: string;
-  items: string[];
-}
-
-interface MenuItem {
-  id: string;
-  title: string;
-  sections: MenuSection[];
-}
+import { MenuItem } from "@/components/molecules/MegaMenu/MegaMenu";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -20,8 +10,6 @@ interface MobileMenuProps {
   submenuOpen: string | null;
   onClose: () => void;
   onToggleSubmenu: (menuId: string) => void;
-  getCategoryPath: (category: string) => string;
-  getItemPath: (item: string) => string;
 }
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({
@@ -30,8 +18,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   submenuOpen,
   onClose,
   onToggleSubmenu,
-  getCategoryPath,
-  getItemPath,
 }) => {
   if (!isOpen) return null;
 
@@ -87,13 +73,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                         {section.items.map((item, itemIdx) => (
                           <li key={itemIdx}>
                             <Link
-                              href={`/${getCategoryPath(
-                                section.title
-                              )}/${getItemPath(item)}`}
+                              href={item.url}
                               className="block py-1 text-sm text-gray-600 hover:text-black"
                               onClick={onClose}
                             >
-                              {item}
+                              {item.name}
                             </Link>
                           </li>
                         ))}
@@ -107,11 +91,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         </div>
 
         <div className="mt-4 px-4 py-2 border-t border-gray-200">
-          <Link
-            href="/login"
-            className="block py-2 text-sm"
-            onClick={onClose}
-          >
+          <Link href="/login" className="block py-2 text-sm" onClick={onClose}>
             로그인
           </Link>
           <Link
@@ -132,4 +112,4 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
       </div>
     </>
   );
-}; 
+};

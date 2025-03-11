@@ -1,0 +1,655 @@
+{
+  "banner": [
+    {
+      "id": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&h=400&auto=format&fit=crop",
+      "link": "/event/summer",
+      "title": "여름 신상품 특별 할인"
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&h=400&auto=format&fit=crop",
+      "link": "/event/luxury",
+      "title": "명품 브랜드 기획전"
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&h=400&auto=format&fit=crop",
+      "link": "/event/seasonoff",
+      "title": "시즌오프 최대 70% 할인"
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&h=400&auto=format&fit=crop",
+      "link": "/event/mac",
+      "title": "맥북 관련 상품 99% 할인"
+    }
+  ],
+  "category": [
+    {
+      "id": "designers",
+      "sections": [
+        {
+          "items": [
+            {"name": "알렉산더 맥퀸", "url": "/women/designers/alexander-mcqueen"},
+            {"name": "발렌시아가", "url": "/women/designers/balenciaga"},
+            {"name": "보테가 베네타", "url": "/women/designers/bottega-veneta"},
+            {"name": "버버리", "url": "/women/designers/burberry"},
+            {"name": "셀린느", "url": "/women/designers/celine"},
+            {"name": "샤넬", "url": "/women/designers/chanel"},
+            {"name": "클로에", "url": "/women/designers/chloe"},
+            {"name": "디올", "url": "/women/designers/dior"},
+            {"name": "돌체 & 가바나", "url": "/women/designers/dolce-gabbana"},
+            {"name": "펜디", "url": "/women/designers/fendi"},
+            {"name": "구찌", "url": "/women/designers/gucci"},
+            {"name": "생로랑", "url": "/women/designers/saint-laurent"}
+          ],
+          "title": "여성 디자이너"
+        },
+        {
+          "items": [
+            {"name": "발렌시아가", "url": "/men/designers/balenciaga"},
+            {"name": "버버리", "url": "/men/designers/burberry"},
+            {"name": "돌체 & 가바나", "url": "/men/designers/dolce-gabbana"},
+            {"name": "펜디", "url": "/men/designers/fendi"},
+            {"name": "구찌", "url": "/men/designers/gucci"},
+            {"name": "생로랑", "url": "/men/designers/saint-laurent"},
+            {"name": "로에베", "url": "/men/designers/loewe"},
+            {"name": "톰 포드", "url": "/men/designers/tom-ford"},
+            {"name": "발렌티노", "url": "/men/designers/valentino"},
+            {"name": "베르사체", "url": "/men/designers/versace"}
+          ],
+          "title": "남성 디자이너"
+        },
+        {
+          "items": [
+            {"name": "구찌", "url": "/designers/gucci"},
+            {"name": "프라다", "url": "/designers/prada"},
+            {"name": "생로랑", "url": "/designers/saint-laurent"},
+            {"name": "발렌시아가", "url": "/designers/balenciaga"},
+            {"name": "버버리", "url": "/designers/burberry"},
+            {"name": "셀린느", "url": "/designers/celine"},
+            {"name": "디올", "url": "/designers/dior"},
+            {"name": "펜디", "url": "/designers/fendi"},
+            {"name": "발렌티노", "url": "/designers/valentino"},
+            {"name": "보테가 베네타", "url": "/designers/bottega-veneta"}
+          ],
+          "title": "인기 디자이너"
+        },
+        {
+          "items": [
+            {"name": "보테가 베네타", "url": "/bags/bottega-veneta"},
+            {"name": "버버리", "url": "/bags/burberry"},
+            {"name": "샤넬", "url": "/bags/chanel"},
+            {"name": "클로에", "url": "/bags/chloe"},
+            {"name": "디올", "url": "/bags/dior"},
+            {"name": "펜디", "url": "/bags/fendi"},
+            {"name": "구찌", "url": "/bags/gucci"},
+            {"name": "생로랑", "url": "/bags/saint-laurent"},
+            {"name": "로에베", "url": "/bags/loewe"},
+            {"name": "프라다", "url": "/bags/prada"}
+          ],
+          "title": "디자이너 가방"
+        }
+      ],
+      "title": "디자이너"
+    },
+    {
+      "id": "exclusive",
+      "sections": [
+        {
+          "items": [
+            {"name": "Saks 익스클루시브", "url": "/exclusive/saks-exclusive"},
+            {"name": "캡슐 컬렉션", "url": "/exclusive/capsule-collection"},
+            {"name": "리미티드 에디션", "url": "/exclusive/limited-edition"},
+            {"name": "프리 오더", "url": "/exclusive/pre-order"},
+            {"name": "컬렉터 아이템", "url": "/exclusive/collector-items"}
+          ],
+          "title": "익스클루시브 컬렉션"
+        },
+        {
+          "items": [
+            {"name": "디자이너 트렁크 쇼", "url": "/exclusive/designer-trunk-show"},
+            {"name": "팝업 스토어", "url": "/exclusive/popup-store"},
+            {"name": "시그니처 이벤트", "url": "/exclusive/signature-events"},
+            {"name": "VIP 프리뷰", "url": "/exclusive/vip-preview"}
+          ],
+          "title": "익스클루시브 이벤트"
+        },
+        {
+          "items": [
+            {"name": "퍼스널 스타일링", "url": "/exclusive/personal-styling"},
+            {"name": "맞춤 제작", "url": "/exclusive/custom-tailoring"},
+            {"name": "VIP 라운지", "url": "/exclusive/vip-lounge"},
+            {"name": "선물 포장", "url": "/exclusive/gift-wrapping"},
+            {"name": "컨시어지 서비스", "url": "/exclusive/concierge-service"}
+          ],
+          "title": "익스클루시브 서비스"
+        }
+      ],
+      "title": "익스클루시브"
+    },
+    {
+      "id": "clothing",
+      "sections": [
+        {
+          "items": [
+            {"name": "드레스", "url": "/women/clothing/dresses"},
+            {"name": "탑 & 티셔츠", "url": "/women/clothing/tops-tshirts"},
+            {"name": "니트웨어", "url": "/women/clothing/knitwear"},
+            {"name": "자켓 & 코트", "url": "/women/clothing/jackets-coats"},
+            {"name": "팬츠 & 진", "url": "/women/clothing/pants-jeans"},
+            {"name": "스커트", "url": "/women/clothing/skirts"}
+          ],
+          "title": "여성 의류"
+        },
+        {
+          "items": [
+            {"name": "셔츠", "url": "/men/clothing/shirts"},
+            {"name": "티셔츠 & 폴로", "url": "/men/clothing/tshirts-polos"},
+            {"name": "니트웨어", "url": "/men/clothing/knitwear"},
+            {"name": "자켓 & 코트", "url": "/men/clothing/jackets-coats"},
+            {"name": "팬츠 & 진", "url": "/men/clothing/pants-jeans"},
+            {"name": "수트", "url": "/men/clothing/suits"}
+          ],
+          "title": "남성 의류"
+        },
+        {
+          "items": [
+            {"name": "캐주얼", "url": "/clothing/styles/casual"},
+            {"name": "비즈니스", "url": "/clothing/styles/business"},
+            {"name": "이브닝", "url": "/clothing/styles/evening"},
+            {"name": "파티", "url": "/clothing/styles/party"},
+            {"name": "베케이션", "url": "/clothing/styles/vacation"},
+            {"name": "시즌 트렌드", "url": "/clothing/styles/season-trends"}
+          ],
+          "title": "스타일"
+        },
+        {
+          "items": [
+            {"name": "구찌", "url": "/clothing/brands/gucci"},
+            {"name": "프라다", "url": "/clothing/brands/prada"},
+            {"name": "생로랑", "url": "/clothing/brands/saint-laurent"},
+            {"name": "발렌시아가", "url": "/clothing/brands/balenciaga"},
+            {"name": "버버리", "url": "/clothing/brands/burberry"},
+            {"name": "셀린느", "url": "/clothing/brands/celine"},
+            {"name": "디올", "url": "/clothing/brands/dior"},
+            {"name": "펜디", "url": "/clothing/brands/fendi"}
+          ],
+          "title": "인기 브랜드"
+        }
+      ],
+      "title": "의류"
+    },
+    {
+      "id": "dresses",
+      "sections": [
+        {
+          "items": [
+            {"name": "칵테일 드레스", "url": "/dresses/cocktail"},
+            {"name": "이브닝 드레스", "url": "/dresses/evening"},
+            {"name": "파티 드레스", "url": "/dresses/party"},
+            {"name": "캐주얼 드레스", "url": "/dresses/casual"},
+            {"name": "맥시 드레스", "url": "/dresses/maxi"},
+            {"name": "미디 드레스", "url": "/dresses/midi"},
+            {"name": "미니 드레스", "url": "/dresses/mini"},
+            {"name": "웨딩 드레스", "url": "/dresses/wedding"}
+          ],
+          "title": "카테고리"
+        },
+        {
+          "items": [
+            {"name": "봄/여름 드레스", "url": "/dresses/seasons/spring-summer"},
+            {"name": "가을/겨울 드레스", "url": "/dresses/seasons/fall-winter"},
+            {"name": "리조트 드레스", "url": "/dresses/seasons/resort"},
+            {"name": "홀리데이 드레스", "url": "/dresses/seasons/holiday"}
+          ],
+          "title": "시즌"
+        },
+        {
+          "items": [
+            {"name": "알렉산더 맥퀸", "url": "/dresses/brands/alexander-mcqueen"},
+            {"name": "발렌시아가", "url": "/dresses/brands/balenciaga"},
+            {"name": "셀린느", "url": "/dresses/brands/celine"},
+            {"name": "디올", "url": "/dresses/brands/dior"},
+            {"name": "구찌", "url": "/dresses/brands/gucci"},
+            {"name": "생로랑", "url": "/dresses/brands/saint-laurent"},
+            {"name": "발렌티노", "url": "/dresses/brands/valentino"},
+            {"name": "베르사체", "url": "/dresses/brands/versace"}
+          ],
+          "title": "인기 브랜드"
+        }
+      ],
+      "title": "드레스"
+    },
+    {
+      "id": "shoes",
+      "sections": [
+        {
+          "items": [
+            {"name": "힐 & 펌프스", "url": "/shoes/women/heels-pumps"},
+            {"name": "부츠 & 부티", "url": "/shoes/women/boots-booties"},
+            {"name": "플랫 & 로퍼", "url": "/shoes/women/flats-loafers"},
+            {"name": "스니커즈", "url": "/shoes/women/sneakers"},
+            {"name": "샌들", "url": "/shoes/women/sandals"},
+            {"name": "웨딩슈즈", "url": "/shoes/women/wedding-shoes"},
+            {"name": "이브닝 슈즈", "url": "/shoes/women/evening-shoes"},
+            {"name": "에스파드리유", "url": "/shoes/women/espadrilles"}
+          ],
+          "title": "여성 슈즈"
+        },
+        {
+          "items": [
+            {"name": "옥스포드 & 더비", "url": "/shoes/men/oxfords-derbies"},
+            {"name": "로퍼", "url": "/shoes/men/loafers"},
+            {"name": "스니커즈", "url": "/shoes/men/sneakers"},
+            {"name": "부츠", "url": "/shoes/men/boots"},
+            {"name": "샌들", "url": "/shoes/men/sandals"},
+            {"name": "슬리퍼", "url": "/shoes/men/slippers"},
+            {"name": "드레스 슈즈", "url": "/shoes/men/dress-shoes"}
+          ],
+          "title": "남성 슈즈"
+        },
+        {
+          "items": [
+            {"name": "크리스찬 루부탱", "url": "/shoes/brands/christian-louboutin"},
+            {"name": "지미 추", "url": "/shoes/brands/jimmy-choo"},
+            {"name": "마놀로 블라닉", "url": "/shoes/brands/manolo-blahnik"},
+            {"name": "구찌", "url": "/shoes/brands/gucci"},
+            {"name": "프라다", "url": "/shoes/brands/prada"},
+            {"name": "발렌시아가", "url": "/shoes/brands/balenciaga"},
+            {"name": "페라가모", "url": "/shoes/brands/ferragamo"},
+            {"name": "발렌티노", "url": "/shoes/brands/valentino"}
+          ],
+          "title": "인기 브랜드"
+        }
+      ],
+      "title": "신발"
+    },
+    {
+      "id": "bags",
+      "sections": [
+        {
+          "items": [
+            {"name": "토트백", "url": "/bags/styles/tote"},
+            {"name": "크로스바디백", "url": "/bags/styles/crossbody"},
+            {"name": "숄더백", "url": "/bags/styles/shoulder"},
+            {"name": "클러치", "url": "/bags/styles/clutch"},
+            {"name": "백팩", "url": "/bags/styles/backpack"},
+            {"name": "미니백", "url": "/bags/styles/mini"},
+            {"name": "탑 핸들백", "url": "/bags/styles/top-handle"},
+            {"name": "이브닝백", "url": "/bags/styles/evening"},
+            {"name": "비치백", "url": "/bags/styles/beach"},
+            {"name": "여행용 가방", "url": "/bags/styles/travel"}
+          ],
+          "title": "스타일"
+        },
+        {
+          "items": [
+            {"name": "샤넬", "url": "/bags/brands/chanel"},
+            {"name": "디올", "url": "/bags/brands/dior"},
+            {"name": "구찌", "url": "/bags/brands/gucci"},
+            {"name": "프라다", "url": "/bags/brands/prada"},
+            {"name": "생로랑", "url": "/bags/brands/saint-laurent"},
+            {"name": "발렌시아가", "url": "/bags/brands/balenciaga"},
+            {"name": "셀린느", "url": "/bags/brands/celine"},
+            {"name": "보테가 베네타", "url": "/bags/brands/bottega-veneta"},
+            {"name": "로에베", "url": "/bags/brands/loewe"},
+            {"name": "펜디", "url": "/bags/brands/fendi"}
+          ],
+          "title": "인기 브랜드"
+        },
+        {
+          "items": [
+            {"name": "브리프케이스", "url": "/bags/men/briefcase"},
+            {"name": "백팩", "url": "/bags/men/backpack"},
+            {"name": "메신저백", "url": "/bags/men/messenger"},
+            {"name": "토트백", "url": "/bags/men/tote"},
+            {"name": "여행용 가방", "url": "/bags/men/travel"},
+            {"name": "지갑 & 카드홀더", "url": "/bags/men/wallets-cardholders"}
+          ],
+          "title": "남성 가방"
+        }
+      ],
+      "title": "가방"
+    },
+    {
+      "id": "jewelry",
+      "sections": [
+        {
+          "items": [
+            {"name": "목걸이 & 펜던트", "url": "/jewelry/categories/necklaces-pendants"},
+            {"name": "귀걸이", "url": "/jewelry/categories/earrings"},
+            {"name": "팔찌", "url": "/jewelry/categories/bracelets"},
+            {"name": "반지", "url": "/jewelry/categories/rings"},
+            {"name": "브로치", "url": "/jewelry/categories/brooches"},
+            {"name": "파인 주얼리", "url": "/jewelry/categories/fine-jewelry"},
+            {"name": "웨딩 주얼리", "url": "/jewelry/categories/wedding-jewelry"},
+            {"name": "빈티지 주얼리", "url": "/jewelry/categories/vintage-jewelry"}
+          ],
+          "title": "카테고리"
+        },
+        {
+          "items": [
+            {"name": "카르티에", "url": "/jewelry/brands/cartier"},
+            {"name": "불가리", "url": "/jewelry/brands/bvlgari"},
+            {"name": "티파니", "url": "/jewelry/brands/tiffany"},
+            {"name": "반클리프 아펠", "url": "/jewelry/brands/van-cleef-arpels"},
+            {"name": "쇼파드", "url": "/jewelry/brands/chopard"},
+            {"name": "미키모토", "url": "/jewelry/brands/mikimoto"},
+            {"name": "다비드 윰", "url": "/jewelry/brands/david-yurman"},
+            {"name": "포멜라토", "url": "/jewelry/brands/pomellato"}
+          ],
+          "title": "인기 브랜드"
+        },
+        {
+          "items": [
+            {"name": "다이아몬드", "url": "/jewelry/materials/diamond"},
+            {"name": "진주", "url": "/jewelry/materials/pearl"},
+            {"name": "골드", "url": "/jewelry/materials/gold"},
+            {"name": "실버", "url": "/jewelry/materials/silver"},
+            {"name": "플래티넘", "url": "/jewelry/materials/platinum"},
+            {"name": "젬스톤", "url": "/jewelry/materials/gemstone"},
+            {"name": "에나멜", "url": "/jewelry/materials/enamel"}
+          ],
+          "title": "소재"
+        }
+      ],
+      "title": "주얼리"
+    },
+    {
+      "id": "accessories",
+      "sections": [
+        {
+          "items": [
+            {"name": "벨트", "url": "/accessories/women/belts"},
+            {"name": "선글라스", "url": "/accessories/women/sunglasses"},
+            {"name": "모자", "url": "/accessories/women/hats"},
+            {"name": "장갑", "url": "/accessories/women/gloves"},
+            {"name": "스카프", "url": "/accessories/women/scarves"},
+            {"name": "헤어 액세서리", "url": "/accessories/women/hair-accessories"},
+            {"name": "키링 & 참", "url": "/accessories/women/keyrings-charms"},
+            {"name": "파우치", "url": "/accessories/women/pouches"}
+          ],
+          "title": "여성 액세서리"
+        },
+        {
+          "items": [
+            {"name": "타이 & 포켓 스퀘어", "url": "/accessories/men/ties-pocket-squares"},
+            {"name": "벨트", "url": "/accessories/men/belts"},
+            {"name": "시계", "url": "/accessories/men/watches"},
+            {"name": "선글라스", "url": "/accessories/men/sunglasses"},
+            {"name": "모자", "url": "/accessories/men/hats"},
+            {"name": "장갑", "url": "/accessories/men/gloves"},
+            {"name": "스카프", "url": "/accessories/men/scarves"},
+            {"name": "커프링크스", "url": "/accessories/men/cufflinks"}
+          ],
+          "title": "남성 액세서리"
+        },
+        {
+          "items": [
+            {"name": "여성 시계", "url": "/accessories/women/watches"},
+            {"name": "남성 시계", "url": "/accessories/men/watches"},
+            {"name": "럭셔리 시계", "url": "/accessories/luxury-watches"},
+            {"name": "스포츠 시계", "url": "/accessories/sports-watches"},
+            {"name": "스마트 시계", "url": "/accessories/smart-watches"}
+          ],
+          "title": "시계"
+        },
+        {
+          "items": [
+            {"name": "구찌", "url": "/accessories/brands/gucci"},
+            {"name": "프라다", "url": "/accessories/brands/prada"},
+            {"name": "생로랑", "url": "/accessories/brands/saint-laurent"},
+            {"name": "발렌시아가", "url": "/accessories/brands/balenciaga"},
+            {"name": "버버리", "url": "/accessories/brands/burberry"},
+            {"name": "롤렉스", "url": "/accessories/brands/rolex"},
+            {"name": "오메가", "url": "/accessories/brands/omega"},
+            {"name": "태그호이어", "url": "/accessories/brands/tag-heuer"}
+          ],
+          "title": "인기 브랜드"
+        }
+      ],
+      "title": "액세서리"
+    },
+    {
+      "id": "beauty",
+      "sections": [
+        {
+          "items": [
+            {"name": "페이스", "url": "/beauty/categories/face"},
+            {"name": "립", "url": "/beauty/categories/lips"},
+            {"name": "아이", "url": "/beauty/categories/eyes"},
+            {"name": "네일", "url": "/beauty/categories/nails"},
+            {"name": "메이크업 툴", "url": "/beauty/categories/makeup-tools"},
+            {"name": "팔레트 & 세트", "url": "/beauty/categories/palettes-sets"}
+          ],
+          "title": "메이크업"
+        },
+        {
+          "items": [
+            {"name": "클렌저", "url": "/beauty/categories/cleanser"},
+            {"name": "트리트먼트 & 세럼", "url": "/beauty/categories/toner-serum"},
+            {"name": "모이스처라이저", "url": "/beauty/categories/moisturizer"},
+            {"name": "마스크 & 엑스폴리에이터", "url": "/beauty/categories/masks-exfoliators"},
+            {"name": "아이 케어", "url": "/beauty/categories/eye-care"},
+            {"name": "선 케어", "url": "/beauty/categories/sunscreen"}
+          ],
+          "title": "스킨케어"
+        },
+        {
+          "items": [
+            {"name": "여성 향수", "url": "/beauty/categories/women-fragrance"},
+            {"name": "남성 향수", "url": "/beauty/categories/men-fragrance"},
+            {"name": "유니섹스 향수", "url": "/beauty/categories/unisex-fragrance"},
+            {"name": "향수 세트", "url": "/beauty/categories/fragrance-sets"},
+            {"name": "바디 스프레이", "url": "/beauty/categories/body-spray"}
+          ],
+          "title": "향수"
+        },
+        {
+          "items": [
+            {"name": "샤넬", "url": "/beauty/brands/chanel"},
+            {"name": "디올", "url": "/beauty/brands/dior"},
+            {"name": "랑콤", "url": "/beauty/brands/lancome"},
+            {"name": "에스티 로더", "url": "/beauty/brands/estee-lauder"},
+            {"name": "라 메르", "url": "/beauty/brands/la-mer"},
+            {"name": "조 말론", "url": "/beauty/brands/jo-malone"},
+            {"name": "톰 포드", "url": "/beauty/brands/tom-ford"},
+            {"name": "입생로랑", "url": "/beauty/brands/sisley"}
+          ],
+          "title": "인기 브랜드"
+        }
+      ],
+      "title": "뷰티"
+    },
+    {
+      "id": "kids",
+      "sections": [
+        {
+          "items": [
+            {"name": "신상품", "url": "/kids/new-arrivals"},
+            {"name": "아우터", "url": "/kids/outerwear"},
+            {"name": "드레스", "url": "/kids/dresses"},
+            {"name": "탑 & 티셔츠", "url": "/kids/tops-tshirts"},
+            {"name": "스커트", "url": "/kids/skirts"},
+            {"name": "팬츠 & 데님", "url": "/kids/pants-denim"},
+            {"name": "슈즈", "url": "/kids/shoes"},
+            {"name": "액세서리", "url": "/kids/accessories"}
+          ],
+          "title": "여아"
+        },
+        {
+          "items": [
+            {"name": "신상품", "url": "/kids/new-arrivals"},
+            {"name": "아우터", "url": "/kids/outerwear"},
+            {"name": "셔츠", "url": "/kids/shirts"},
+            {"name": "티셔츠 & 폴로", "url": "/kids/tshirts-polos"},
+            {"name": "팬츠 & 데님", "url": "/kids/pants-denim"},
+            {"name": "슈즈", "url": "/kids/shoes"},
+            {"name": "액세서리", "url": "/kids/accessories"}
+          ],
+          "title": "남아"
+        },
+        {
+          "items": [
+            {"name": "신생아", "url": "/kids/newborn"},
+            {"name": "베이비 의류", "url": "/kids/baby-clothing"},
+            {"name": "베이비 슈즈", "url": "/kids/baby-shoes"},
+            {"name": "베이비 액세서리", "url": "/kids/baby-accessories"},
+            {"name": "베이비 기프트", "url": "/kids/baby-gifts"}
+          ],
+          "title": "베이비"
+        },
+        {
+          "items": [
+            {"name": "구찌 키즈", "url": "/kids/brands/gucci"},
+            {"name": "버버리 키즈", "url": "/kids/brands/burberry"},
+            {"name": "랄프 로렌 키즈", "url": "/kids/brands/ralph-lauren"},
+            {"name": "몽클레어 키즈", "url": "/kids/brands/moncler"},
+            {"name": "펜디 키즈", "url": "/kids/brands/fendi"},
+            {"name": "돌체 & 가바나 키즈", "url": "/kids/brands/dolce-gabbana"}
+          ],
+          "title": "인기 브랜드"
+        }
+      ],
+      "title": "키즈"
+    },
+    {
+      "id": "home",
+      "sections": [
+        {
+          "items": [
+            {"name": "쿠션 & 담요", "url": "/home/decor/cushions-blankets"},
+            {"name": "캔들 & 디퓨저", "url": "/home/decor/candles-diffusers"},
+            {"name": "화병 & 오브제", "url": "/home/decor/vases-objects"},
+            {"name": "프레임 & 액자", "url": "/home/decor/frames-art"},
+            {"name": "월 데코", "url": "/home/decor/monthly-decor"},
+            {"name": "러그 & 매트", "url": "/home/decor/rugs-mats"}
+          ],
+          "title": "홈 데코"
+        },
+        {
+          "items": [
+            {"name": "디너웨어", "url": "/home/dining/dinnerware"},
+            {"name": "글라스웨어", "url": "/home/dining/glassware"},
+            {"name": "커트러리", "url": "/home/decor/curtains"},
+            {"name": "서빙웨어", "url": "/home/dining/servingware"},
+            {"name": "테이블 린넨", "url": "/home/decor/table-linen"},
+            {"name": "바 액세서리", "url": "/home/decor/bar-accessories"}
+          ],
+          "title": "테이블웨어"
+        },
+        {
+          "items": [
+            {"name": "침구 세트", "url": "/home/bedding/bedding-sets"},
+            {"name": "베개 & 쿠션", "url": "/home/bedding/pillows-duvets"},
+            {"name": "타월", "url": "/home/decor/throws"},
+            {"name": "배스 액세서리", "url": "/home/decor/bath-accessories"},
+            {"name": "홈 프래그런스", "url": "/home/decor/home-fragrances"}
+          ],
+          "title": "베드 & 배스"
+        },
+        {
+          "items": [
+            {"name": "에르메스 홈", "url": "/home/decor/ermaess-home"},
+            {"name": "베르사체 홈", "url": "/home/decor/versace-home"},
+            {"name": "미소니 홈", "url": "/home/decor/minotti-home"},
+            {"name": "랄프 로렌 홈", "url": "/home/decor/ralph-lauren-home"},
+            {"name": "조 말론", "url": "/beauty/brands/jo-malone"},
+            {"name": "딥티크", "url": "/home/decor/d-it-home"}
+          ],
+          "title": "인기 브랜드"
+        }
+      ],
+      "title": "인테리어"
+    },
+    {
+      "id": "gifts",
+      "sections": [
+        {
+          "items": [
+            {"name": "여성을 위한 선물", "url": "/gifts/women"},
+            {"name": "남성을 위한 선물", "url": "/gifts/men"},
+            {"name": "커플 선물", "url": "/gifts/couples"},
+            {"name": "웨딩 선물", "url": "/gifts/wedding"},
+            {"name": "생일 선물", "url": "/gifts/birthday"},
+            {"name": "기념일 선물", "url": "/gifts/anniversary"},
+            {"name": "하우스워밍 선물", "url": "/gifts/housewarming"}
+          ],
+          "title": "선물 카테고리"
+        },
+        {
+          "items": [
+            {"name": "10만원 미만", "url": "/gifts/under-100k"},
+            {"name": "10만원-30만원", "url": "/gifts/100k-300k"},
+            {"name": "30만원-50만원", "url": "/gifts/300k-500k"},
+            {"name": "50만원-100만원", "url": "/gifts/500k-1m"},
+            {"name": "100만원 이상", "url": "/gifts/over-1m"},
+            {"name": "럭셔리 선물", "url": "/gifts/luxury"}
+          ],
+          "title": "가격대별 선물"
+        },
+        {
+          "items": [
+            {"name": "향수 & 뷰티 세트", "url": "/gifts/fragrance-beauty-sets"},
+            {"name": "주얼리 & 시계", "url": "/gifts/jewelry-watches"},
+            {"name": "가죽 소품", "url": "/gifts/leather-goods"},
+            {"name": "홈 데코", "url": "/home/decor/home-decor"},
+            {"name": "테크 액세서리", "url": "/gifts/tech-accessories"},
+            {"name": "기프트 카드", "url": "/gifts/gift-cards"}
+          ],
+          "title": "인기 선물"
+        }
+      ],
+      "title": "인기 기프팅 상품"
+    },
+    {
+      "id": "sale",
+      "sections": [
+        {
+          "items": [
+            {"name": "의류", "url": "/sale/clothing"},
+            {"name": "슈즈", "url": "/sale/shoes"},
+            {"name": "핸드백", "url": "/sale/handbags"},
+            {"name": "액세서리", "url": "/sale/accessories"},
+            {"name": "주얼리", "url": "/sale/jewelry"},
+            {"name": "뷰티", "url": "/sale/beauty"}
+          ],
+          "title": "여성 세일"
+        },
+        {
+          "items": [
+            {"name": "의류", "url": "/sale/clothing"},
+            {"name": "슈즈", "url": "/sale/shoes"},
+            {"name": "가방", "url": "/sale/handbags"},
+            {"name": "액세서리", "url": "/sale/accessories"},
+            {"name": "시계", "url": "/sale/watches"}
+          ],
+          "title": "남성 세일"
+        },
+        {
+          "items": [
+            {"name": "30% 할인", "url": "/sale/30-off"},
+            {"name": "50% 할인", "url": "/sale/50-off"},
+            {"name": "70% 할인", "url": "/sale/70-off"},
+            {"name": "마지막 찬스", "url": "/sale/last-chance"},
+            {"name": "클리어런스", "url": "/sale/clearance"}
+          ],
+          "title": "세일 특가"
+        },
+        {
+          "items": [
+            {"name": "여름 세일", "url": "/sale/summer"},
+            {"name": "겨울 세일", "url": "/sale/winter"},
+            {"name": "블랙 프라이데이", "url": "/sale/black-friday"},
+            {"name": "홀리데이 세일", "url": "/sale/holiday"},
+            {"name": "시즌 오프", "url": "/sale/season-off"}
+          ],
+          "title": "시즌 세일"
+        }
+      ],
+      "title": "세일"
+    }
+  ]
+}

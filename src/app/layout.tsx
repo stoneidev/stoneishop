@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
-import "./globals.css";
 import { Suspense } from "react";
 import { FiLoader } from "react-icons/fi";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { AuthProvider } from "@/contexts/AuthContext";
+import "./globals.css";
 
 // Playfair Display 폰트 (영문 세리프용)
 const playfair = Playfair_Display({
