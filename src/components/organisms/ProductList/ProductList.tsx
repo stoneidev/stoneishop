@@ -22,9 +22,13 @@ interface Product {
 }
 
 interface ProductListProps {
-  title: string;
+  category?: string;
+  subcategory?: string;
+  brand?: string;
+  isOnSale?: boolean;
+  title?: string;
   description?: string;
-  products: Product[];
+  products?: Product[];
   viewType?: "grid" | "scroll";
   viewMoreLink?: string;
 }
@@ -94,7 +98,7 @@ export const ProductList: React.FC<ProductListProps> = ({
 
         {viewType === "grid" ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
-            {products.map((product) => (
+            {products?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
@@ -117,7 +121,7 @@ export const ProductList: React.FC<ProductListProps> = ({
                 WebkitOverflowScrolling: "touch",
               }}
             >
-              {products.map((product) => (
+              {products?.map((product) => (
                 <div key={product.id} className="flex-shrink-0 w-64">
                   <ProductCard product={product} />
                 </div>
