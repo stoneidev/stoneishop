@@ -12,18 +12,20 @@ export default function ChanelBagsPage() {
       name: "클래식 플랩백 미디엄",
       brand: "샤넬",
       price: 9850000,
-      imageUrl: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1000&auto=format&fit=crop",
-      imageAlt: "샤넬 클래식 플랩백 미디엄"
+      imageUrl:
+        "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1000&auto=format&fit=crop",
+      imageAlt: "샤넬 클래식 플랩백 미디엄",
     },
     {
       id: "ch-002",
       name: "보이 샤넬 스몰",
       brand: "샤넬",
       price: 8200000,
-      imageUrl: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?q=80&w=1000&auto=format&fit=crop",
+      imageUrl:
+        "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?q=80&w=1000&auto=format&fit=crop",
       imageAlt: "샤넬 보이 샤넬 스몰",
-      isNew: true
-    }
+      isNew: true,
+    },
   ];
 
   return (
@@ -44,15 +46,19 @@ export default function ChanelBagsPage() {
               샤넬 (Chanel)
             </Typography>
             <Typography variant="body1" className="text-gray-700 mb-4">
-              1910년 프랑스에서 가브리엘 '코코' 샤넬이 설립한 샤넬은 현대 여성 패션의 혁명을 일으킨 럭셔리 브랜드입니다.
+              1910년 프랑스에서 가브리엘 &apos;코코&apos; 샤넬이 설립한 샤넬은
+              현대 여성 패션의 혁명을 일으킨 럭셔리 브랜드입니다.
             </Typography>
             <Typography variant="body1" className="text-gray-700">
-              시그니처 퀼팅 패턴과 CC 로고, 체인 스트랩으로 유명한 샤넬 가방은 럭셔리 패션의 상징이 되었습니다. 특히 클래식 플랩백은 시대를 초월한 디자인과 투자 가치로 많은 사랑을 받고 있습니다. 우아함과 세련미, 그리고 시대를 초월한 스타일을 추구하는 브랜드입니다.
+              시그니처 퀼팅 패턴과 CC 로고, 체인 스트랩으로 유명한 샤넬 가방은
+              럭셔리 패션의 상징이 되었습니다. 특히 클래식 플랩백은 시대를
+              초월한 디자인과 투자 가치로 많은 사랑을 받고 있습니다. 우아함과
+              세련미, 그리고 시대를 초월한 스타일을 추구하는 브랜드입니다.
             </Typography>
           </div>
         </div>
-        
-        <ProductList 
+
+        <ProductList
           title="샤넬 가방 컬렉션"
           products={products}
           viewType="grid"
@@ -60,4 +66,4 @@ export default function ChanelBagsPage() {
       </div>
     </MainTemplate>
   );
-} 
+}
